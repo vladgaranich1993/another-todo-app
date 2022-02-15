@@ -1,0 +1,49 @@
+html, body {
+  height: 100%;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  font-size: var(--font-size);
+  color: var(--primary-text-color);
+  font-family: var(--font-family);
+  font-style: normal;
+  letter-spacing: 0px;
+  font-weight: var(--font-weight-regular);
+}
+
+main {
+  flex: 1 auto;
+  overflow-y: scroll;
+}
+
+footer {
+  padding-bottom: 20px;
+  flex-shrink: 0;
+}
+
+#app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 20%;
+  }
+}

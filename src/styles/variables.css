@@ -1,0 +1,30 @@
+:root {
+  /* background */
+  --bg-color: #FFFFFF;
+  --bg-color-disabled: #CCCCCC;
+
+  --accent-color: #005FBC;
+  --primary-color: #0080FF;
+  --secondary-color: #41A0FF;
+
+  /* inputs & borders */
+  --input-border-color: #CCCCCC;
+  --divider-color: #EEEEEE;
+  --disabled-button-color: #BBBBBB;
+  --box-shadow: 0px 2px 5px #0000000D;
+
+
+  /* typography */
+  --font-size: 15px;
+  --font-family: 'Roboto', sans-serif;
+  --font-weight-bold: 700;
+  --font-weight-medium: 500;
+  --font-weight-regular: 300;
+
+  /* text */
+  --primary-text-color: #121212;
+  --secondary-text-color: #AAAAAA;
+  --ghost-text-color: #CCCCCC;
+  --input-text-color: #CCCCCC;
+  --button-text-color: #FFFFFF;
+}
