@@ -7,7 +7,8 @@
       <input
         type="checkbox"
         :id="todo.id"
-        v-model="todo.isCompleted"
+        :checked="todo.isCompleted"
+        @change="updateIsComplete(todo)"
       />
       <label :for="todo.id" />
     </div>
@@ -24,6 +25,8 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator'
+import { Action } from 'vuex-class'
+import { Todo } from '../models/index'
 
 @Component({
   filters: {
@@ -35,7 +38,20 @@ import { Component, Vue, Prop } from 'vue-property-decorator'
 
 export default class TodoListItem extends Vue {
   @Prop({ type: Object, required: true })
-  todo!: TodoListItem
+  todo!: Todo
+
+  @Action('updateTodo') updTodoState!: (updatedTodo: Todo) => void
+  
+  updateIsComplete(updatedTodo: Todo): void {
+    const updTodo: Todo = {
+      id: updatedTodo.id,
+      title: updatedTodo.title,
+      isCompleted: !updatedTodo.isCompleted,
+      createDate: updatedTodo.createDate
+    }
+
+    this.updTodoState(updTodo)
+  }
 }
 </script>
 

@@ -34,9 +34,18 @@ export default new Vuex.Store({
       const res = { id: Math.random(), title, isCompleted: false, createDate: Date.now() }
       commit('newTodo', res)
     },
+    updateTodo({ commit }, updTodo) {
+      commit('updTodo', updTodo)
+    }
   },
   mutations: {
     newTodo: (state, todo) => state.todos.unshift(todo),
+    updTodo: (state, updTodo) => {
+      const index = state.todos.findIndex(todo => todo.id === updTodo.id)
+      if(index !== -1) {
+        state.todos.splice(index, 1, updTodo)
+      }
+    }
   },
   getters: {
     completedTodos: state => state.todos.filter(todo => todo.isCompleted === true),
